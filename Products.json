@@ -1,0 +1,5 @@
+[
+    {"title":"Xiaomi", "description":"Redmi Note 11", "price":133999, "thumbnail":"https://tienda.movistar.com.ar/media/catalog/product/cache/29ccbb5c02aec1862b4f5a57a55d0f2f/r/e/redmi-black-frente.png", "code":"XIAOMI", "stock":10},
+    {"title":"Motorola", "description":"Edge 30 Neo 5g", "price":237399, "thumbnail":"https://tienda.movistar.com.ar/media/catalog/product/cache/29ccbb5c02aec1862b4f5a57a55d0f2f/m/o/moto-edge30neo-black-frente.png", "code":"Motorola", "stock":9},
+    {"title":"Samsung", "description":"Galaxy S23 512GB", "price":932599, "thumbnail":"https://tienda.movistar.com.ar/media/catalog/product/cache/29ccbb5c02aec1862b4f5a57a55d0f2f/s/2/s23_ultra_black_frente_2.png", "code":"SAMSUNG", "stock":8}
+]
