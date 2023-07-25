@@ -1,6 +1,8 @@
-const {ProductManager} = require("./app");
+const {ProductManager} = require("./ProductManager");
 
 const PM = new ProductManager();
+
+// Pruebas para ejecutar El programa.
 //console.log(PM.getProducts());
 PM.addProduct({title:"Samsung", description:"Galaxy A34 5G", price:230999, thumbnail:"https://tienda.movistar.com.ar/media/catalog/product/cache/29ccbb5c02aec1862b4f5a57a55d0f2f/s/a/samsung_a34_graphite_front_1_8.png", code:"SAMSUNG2", stock:10});
 console.log(PM.getProducts());
