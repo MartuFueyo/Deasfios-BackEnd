@@ -1,27 +1,24 @@
 import express from "express";
 import ProductManager from "./ProductManager.js";
+import __dirname from "./utils.js";
+import handlebars from "express-handlebars";
+import viewsRouter from "./routes/views.router.js";
+import {Server} from "socket.io";
 
 const app = express();
 const puerto = 8080;
 const PM = new ProductManager();
 let products = PM.getProducts();
-
-app.get("/products/", (req, res) => {
-    let {limit} = req.query;
-
-    res.send({
-        products: limit ? products.slice(0, limit) : products
-    });
+const httpServer = app.listen(puerto, () => {
+    console.log("Servidor Activo en el puerto: " + puerto);
 });
 
-app.get("/products/:pid", (req, res) => { 
-    let pid = Number(req.params.pid);
+const socketServer = new Server(httpServer)
 
-    res.send({
-        product: products.find(item => item.id === pid) || "Error! El ID de Producto no existe!"
-    });
-});
-
-app.listen(puerto, () => {
-    console.log("Servidor activo en el puerto: " + puerto);
-});
+app.engine("handlebars", handlebars.engine());
+app.set("views", __dirname + "/views");
+app.set("view engine", "handlebars");
+app.use(express.static(__dirname + "/public"));
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+app.use("/", viewsRouter);
