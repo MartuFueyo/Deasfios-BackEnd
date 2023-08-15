@@ -6,7 +6,7 @@ const PM = new ProductManager();
 
 router.get("/", (req, res) => {
     const products = PM.getProducts();
-    res.render("home", {products});
+    res.render("index", {products});
 });
 
 router.get("/realtimeproducts", (req, res) => {
